@@ -39,7 +39,6 @@ fi
 
 if [ "${HUB_LOGSTASH_ES_ENABLE}" = 'true' ]; then
     cp /usr/share/logstash/logstash-elasticsearch.conf /usr/share/logstash/pipeline/logstash-elasticsearch.conf
-    #sed -i "s/#disable //g" /usr/share/logstash/pipeline/logstash.conf
 else
     rm -rf /usr/share/logstash/pipeline/logstash-elasticsearch.conf
 fi
