@@ -26,6 +26,7 @@ ENV HUB_LOGSTASH_ES_ENABLE "false"
 RUN echo -e "$BLACKDUCK_RELEASE_INFO" > /etc/blackduckrelease
 
 COPY logstash-hub.conf "/usr/share/logstash/pipeline/logstash.conf"
+COPY logstash-hub-elasticsearch.conf "/usr/share/logstash/logstash-elasticsearch.conf"
 COPY patterns "/usr/share/logstash/pipeline/patterns/"
 COPY logstash-hub.yml "/usr/share/logstash/config/logstash.yml"
 COPY --from=docker-common healthcheck.sh /usr/local/bin/docker-healthcheck.sh
