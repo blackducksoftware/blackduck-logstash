@@ -38,7 +38,9 @@ fi
 #fi
 
 if [ "${HUB_LOGSTASH_ES_ENABLE}" = 'true' ]; then
-    sed -i "s/#elasticsearch/elasticsearch/g" /usr/share/logstash/pipeline/logstash.conf
+    cp /usr/share/logstash/logstash-elasticsearch.conf /usr/share/logstash/pipeline/logstash-elasticsearch.conf
+else
+    rm -rf /usr/share/logstash/pipeline/logstash-elasticsearch.conf
 fi
 
 /usr/local/bin/deleteLogs.sh &
