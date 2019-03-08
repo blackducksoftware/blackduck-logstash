@@ -1,4 +1,4 @@
-FROM blackducksoftware/hub-docker-common:1.0.1 as docker-common
+FROM blackducksoftware/hub-docker-common:1.0.4 as docker-common
 FROM docker.elastic.co/logstash/logstash:5.6.8
 
 ARG VERSION
